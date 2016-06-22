@@ -11,19 +11,18 @@
         	    var b = document.getElementById("password").value;
         	    var error1=document.getElementById('error1');
 
-        	    if (a != "mani"  && b != "mani"){
-        	        
+        	    if (a == "mani" && b == "mani"){
+        	    	document.getElementById('error1').style.visibility='hide';
+             	   
+        	    	return true;
+        	
+        	    }
+        	    else{
+        	    	
         	    	error1.innerHTML="Login Failed !! Please check the user name and password ";
         	    	document.getElementById('error1').style.visibility='visible';
         	    	
         	    	return false;
-        	    	
-        	    }
-        	    else{
-        	    	
-        	    	document.getElementById('error1').style.visibility='hide';
-        	   
-        	    	return true;
         	    }
          }
          function validateLink() {

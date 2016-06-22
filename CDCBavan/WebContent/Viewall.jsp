@@ -65,6 +65,6 @@ $(document).ready(function() {
 
          
 </div>
-
+<center><a href=Placeorder.jsp>Order your menu</a></center>
 </body>
 </html>

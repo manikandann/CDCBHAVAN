@@ -109,11 +109,11 @@ body {
 			error : function(data) {
 				
 				
-				if(data.responseJSON!=null){	
+				/* if(data.responseJSON!=null){	
 					$(".errorMessage").append(data.responseJSON.message);
-				}else{
+				}else{ */
 				window.location='Error.jsp'
-				}
+				/* } */
 			}
 		});
 
@@ -155,7 +155,7 @@ body {
 			<br> <br> <a href='#' 
 				onclick="addRow('dataTable')">Add Item</a>&nbsp;&nbsp;&nbsp; <a href="#" onclick="deleteRow('dataTable')">Remove Item</a>
 		</div>
-		<p id="error" class="errorMessage" style="color:red"></p>
+		<!-- <p id="error" class="errorMessage" style="color:red"></p> -->
 		<br>
 		<center>
 			<INPUT type="button" value="Place Order" name="order"
@@ -181,7 +181,10 @@ body {
 		<br>
 		<br>
 		<center><h2><font color="Red"><b>Thanks for Visiting CDC BAVAN</b></font></h2></center>
+		<br>
+		<center><a href=Placeorder.jsp>To order more items click here</a></center>
 	</div>
+	
 	
 </body>
 </html>
