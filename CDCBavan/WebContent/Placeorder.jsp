@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 <title>CDCBavan</title>
 <script src="js/jquery.js"></script>
 <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -17,9 +18,23 @@ body {
 .resultDiv {
 	display: none;
 }
+.loader{
+position:   fixed;
+z-index:    1000;
+height: 100%;
+width:100%;
+background-color: black;
+overflow: hidden;
+opacity:0.4;
+background-image: url("images/loader.gif");
+background-repeat: no-repeat;
+background-position: 50% 50%;
+display: none;
+}
 </style>
 
 <SCRIPT language="javascript">
+
 	function addRow(tableID) {
 
 		var table = document.getElementById(tableID);
@@ -76,6 +91,12 @@ body {
 
 		});
 		console.log(itemArray);
+		
+		$(document).on({
+		    ajaxStart: function() {  $(".loader").css("display","block");   },
+		     ajaxStop: function() {  $(".loader").css("display","none"); }    
+		});
+
 		//Start Ajax
 
 		$.ajax({
@@ -86,7 +107,7 @@ body {
 				"Access-Control-Allow-Origin" : "*"
 			},
 			type : "POST",
-			url : "http://localhost:1239/order/getAllOrders",
+			url : "http://d-113101847:1239/order/getAllOrders",
 			data : JSON.stringify(itemArray),
 			contentType : 'application/json',
 			success : function(data) {
@@ -132,6 +153,8 @@ body {
 </SCRIPT>
 </head>
 <body>
+<div class="loader">
+</div>
 	<br>
 	<a href='User.jsp'><img src="images/back.jpeg" alt="Home"
 		style="width: 50px; height: 50px;"></a>

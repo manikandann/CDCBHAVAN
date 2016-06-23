@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 <title>CDCBavan</title>
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
 <script src="js/jquery.js"></script>
@@ -19,7 +20,7 @@
 <script >
 $(document).ready(function() {
 $.ajax({
-    url: "http://localhost:1235/itemview?itemId="+ <%= request.getParameter("id")%>,
+    url: "http://d-113101847:1235/itemview?itemId="+ <%= request.getParameter("id")%>,
     type: 'GET',
     cache: false,
     contentType: 'application/json; charset=utf-8',

@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
  
   <link rel="stylesheet" href="css/bootstrap.min.css">
 
@@ -14,10 +15,28 @@
   background: radial-gradient(circle, white, white);
   background-size: cover; 
 } 
-
+.loader{
+position:   fixed;
+z-index:    1000;
+height: 100%;
+width:100%;
+background-color: black;
+overflow: hidden;
+opacity:0.4;
+background-image: url("images/loader.gif");
+background-repeat: no-repeat;
+background-position: 50% 50%;
+display: none;
+}
 </style> 
 <script src="js/jquery.js"></script>
 <script >
+
+$(document).on({
+    ajaxStart: function() {  $(".loader").css("display","block");   },
+     ajaxStop: function() {  $(".loader").css("display","none"); }    
+});
+
 $(document).ready(function() {
 	$.ajax({  
 	    dataType: "json",
@@ -27,7 +46,7 @@ $(document).ready(function() {
 	        "Access-Control-Allow-Origin": "*"
 	    },
 	    type: "GET",
-	    url: "http://localhost:1237/itemviewall",    
+	    url: "http://d-113101847:1237/itemviewall",    
 	    success: function(data){ 
 	    	console.log("received listener: " + data);
 	    	/* for (var x = 0; x < data.length; x++) { */
@@ -52,6 +71,8 @@ $(document).ready(function() {
 
 </head>
 <body>
+<div class="loader">
+</div>
 <br>
 <a  href='User.jsp'><img src="images/back.jpeg" alt="Home" style="width:50px;height:50px;"></a>
 <div align="center">

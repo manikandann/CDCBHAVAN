@@ -5,19 +5,20 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 <title>CDCBavan</title>
 <style type="text/css">
- 
-     body {
-    
-     background: url("images/welcome.jpeg") no-repeat center center fixed  ;  
-     background-size: cover;    
-       
-}   
 
+     body {
+     background: url("images/welcome.jpeg") no-repeat center center fixed  ;  
+    
+     background-size: cover;    
+      
+}    
 </style> 
 </head>
-<body>
+<body >
+
 <marquee><h2><font color="green"><B> Welcome to CDCBavan - <i><font color="red"> Taste that makes you fly</font></i></B></font></h2></marquee>
 <div align="right"><font color="yellow">
 <%
@@ -39,6 +40,8 @@
 
 
 <div align="center">
+<br>
+<br>
 <br>
 <br>
 <br>

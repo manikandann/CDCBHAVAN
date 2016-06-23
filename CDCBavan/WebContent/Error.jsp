@@ -9,7 +9,7 @@
  
      body {
     
-     background: url("images/down1.jpeg") no-repeat center center fixed  ;  
+     background: url("images/error.jpeg") no-repeat center center fixed  ;  
      background-size: cover;    
        
 }   

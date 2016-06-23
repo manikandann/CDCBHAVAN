@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 <title>CDCBavan</title>
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
 <script src="js/jquery.js"></script>
@@ -12,9 +13,25 @@
   background: radial-gradient(circle, red, white);
   background-size: cover; 
 } 
+.loader{
+position:   fixed;
+z-index:    1000;
+height: 100%;
+width:100%;
+background-color: black;
+overflow: hidden;
+opacity:0.4;
+background-image: url("images/loader.gif");
+background-repeat: no-repeat;
+background-position: 50% 50%;
+display: none;
+}
 </style> 
 <script >
-
+$(document).on({
+    ajaxStart: function() {  $(".loader").css("display","block");   },
+     ajaxStop: function() {  $(".loader").css("display","none"); }    
+});
 $(document).ready(function() {
 	$.ajax({  
 	    dataType: "json",
@@ -24,7 +41,7 @@ $(document).ready(function() {
 	        "Access-Control-Allow-Origin": "*"
 	    },
 	    type: "GET",
-	    url: "http://localhost:1235/itemmodify?itemId=<%= request.getParameter("itemid")%>&itemName=<%= request.getParameter("itemname")%>&itemPrice=<%= request.getParameter("itemprice")%>&status=<%= request.getParameter("status")%> ",    
+	    url: "http://d-113101847:1235/itemmodify?itemId=<%= request.getParameter("itemid")%>&itemName=<%= request.getParameter("itemname")%>&itemPrice=<%= request.getParameter("itemprice")%>&status=<%= request.getParameter("status")%> ",    
 	    success: function(data){  
 	    	$('.greeting-itemId').append(data.itemId);
 	        $('.greeting-itemName').append(data.itemName);
@@ -42,6 +59,8 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
+<div class="loader">
+</div>
 <a  href='Adminhome.jsp'><img src="images/back.jpeg" alt="Home" style="width:50px;height:50px;"></a>
 <div align="center">
 <TABLE  BORDER="2">
